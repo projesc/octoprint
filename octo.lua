@@ -33,11 +33,11 @@ if key ~= nil and #key > 1 then
     end
 
     if not isPrinting and currPrinting then
-      sendEvent("octo_printing_started",json.encode(currJob))
+      send("*","octo_printing_started",json.encode(currJob))
     end
 
     if isPrinting and not currPrinting then
-      sendEvent("octo_printing_stopped",json.encode(prevJob))
+      send("*","octo_printing_stopped",json.encode(prevJob))
     end
 
     isPrinting = currPrinting
